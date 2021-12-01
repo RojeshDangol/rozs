@@ -1,0 +1,33 @@
+* {
+    height: 60px;
+    background-color: gray;
+}
+
+span{
+    font-family: 'Courier New';
+    font-size: 30px;
+    color: skyblue;
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 20px;
+    margin: 0px;
+}
+
+/* .outerContainer {
+    padding: 5px;
+    border: 1px solid #b6b6b6;
+    box-sizing: content-box;
+  }
+  
+  div.container {
+    color: #eeeeee;
+    margin-bottom: 10px;
+    box-sizing: content-box;
+  }
+  
+  div.container > div {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    box-sizing: content-box;
+  } */

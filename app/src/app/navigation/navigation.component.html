@@ -1,0 +1,31 @@
+
+<div class="Nav" fxLayout="row" fxHide fxShow.gt-xs>
+    <div fxFlex="60" fxLayoutAlign="start">
+        <a mat-stroked-button routerLink="home">
+            <mat-icon>home</mat-icon><span class="nav-caption">Home</span></a>
+        <a mat-stroked-button routerLink="profile">
+            <mat-icon>face</mat-icon><span class="nav-caption">Profile</span></a>
+        <a mat-stroked-button routerLink="projects">
+            <mat-icon>computer</mat-icon><span class="nav-caption">Projects</span></a>
+    </div>
+    <div fxFlex="40"fxLayoutAlign="end">
+        <a mat-stroked-button *ngIf="!loggedIn()" routerLink="register">
+            <span class="nav-caption">Register</span></a>
+        <a mat-stroked-button *ngIf="!loggedIn()" routerLink="login">
+            <span class="nav-caption">Login</span></a>
+        <a mat-stroked-button *ngIf="loggedIn()" routerLink="logout">
+            <span class="nav-caption">LogOut</span></a>
+    </div>
+</div>
+
+
+        <mat-sidenav-container>
+            <mat-sidenav fxHide fxShow.xs #sidenav mode="side">
+                <app-nav-list></app-nav-list>
+            </mat-sidenav>
+        <mat-sidenav-content>
+                <router-outlet></router-outlet>
+            </mat-sidenav-content> 
+        </mat-sidenav-container>
+
+

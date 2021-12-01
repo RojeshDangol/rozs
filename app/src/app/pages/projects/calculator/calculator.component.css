@@ -1,0 +1,74 @@
+.outerContainer {
+    padding-top: 30px;
+    /* border: 1px solid #19c430; */
+    box-sizing: content-box;
+}
+
+.calContainer{
+    /* background-color: rgb(77, 86, 138); */
+    /* border: 1px solid #19c430; */
+    box-sizing: content-box;
+    height: 400px;
+}
+
+.logContainer{
+    /* background-color: white;
+    border: 1px solid #19c430; */
+    box-sizing: content-box;
+} 
+
+ul{
+    word-break: break-all;
+    display: inline-block;
+}
+  
+.dispCalculator{
+    word-break: break-all;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .icon-size{
+    font-size: 20px;
+    text-align: right;
+}
+
+.main{
+    width: 60%;
+}
+
+.logs{
+    width: 40%;
+    float: right;
+}
+
+.calculator{
+    width: 200;
+    height: 100;
+}
+
+mat-card{
+    color: black;
+    border-left: 1px;
+}
+
+.deletebtn{
+    color: black;
+    text-align: top right;
+} */
+/* .mat-grid-tile {
+    border: solid 2px #000;
+} */

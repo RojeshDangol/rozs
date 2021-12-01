@@ -1,0 +1,189 @@
+<div class="outerContainer">
+    <div class="container" fxLayout="row" fxLayoutGap="10px" >
+        <div fxFlex="60%" class="calContainer">
+            <div class="dispCalculator" fxLayout="column" fxLayoutGap="10px">
+                <div fxFlex="100" fxLayoutAlign="center center">
+                    <mat-card fxFlex="100%" >{{displayInput}}{{result}}</mat-card>
+                </div>
+                <div fxFlex="100" fxLayoutAlign="center center"><p>{{error}}</p></div>
+            </div>
+        <div  fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center" fxLayoutAlign="center">
+        
+        
+            <div fxLayout="row-wrap"  fxLayoutAlign="center">
+                
+                    <a mat-raised-button (click)="getNumArray(1)">1</a>
+                    <a mat-raised-button (click)="getNumArray(2)">2</a>
+                    <a mat-raised-button (click)="getNumArray(3)">3</a>
+                    <a mat-raised-button (click)="getOperator('+')">+</a>
+            </div>
+            <div  fxLayout="row-wrap"  fxLayoutAlign="center">
+                    <button colspan="3" mat-raised-button (click)="getNumArray(4)">4</button>
+                    <button colspan="3" mat-raised-button (click)="getNumArray(5)">5</button>
+                    <button colspan="3" mat-raised-button (click)="getNumArray(6)">6</button>
+                    <button colspan="3" mat-raised-button (click)="getOperator('-')">-</button> 
+            </div>    
+            <div  fxLayout="row-wrap"  fxLayoutAlign="center">
+                    <button colspan="3" mat-raised-button (click)="getNumArray(7)">7</button>
+                    <button colspan="3" mat-raised-button (click)="getNumArray(8)">8</button>
+                    <button colspan="3" mat-raised-button (click)="getNumArray(9)">9</button>
+                    <button colspan="3"v mat-raised-button (click)="getOperator('*')">*</button>
+            </div>       
+            <div  fxLayout="row-wrap"  fxLayoutAlign="center">
+                    <button colspan="3" mat-raised-button (click)="getNumArray('.')">.</button>
+                    <button colspan="3" mat-raised-button (click)="getNumArray(0)">0</button>
+                    <button colspan="3" mat-raised-button (click)="getResult()">=</button>
+                    <button colspan="3" mat-raised-button (click)="getOperator('/')">/</button>
+            </div>
+            <div fxLayout="column-wrap" fxLayoutAlign="center">
+                <button mat-raised-button (click)="reset()">Reset</button>
+             </div>
+        
+        </div>
+            
+        </div>
+        <div fxFlex="40%" class="logContainer" >
+            <div class="displogs" fxLayout="column-wrap">
+                <div fxFlex="80%"  fxLayoutAlign="center center">Logs</div>
+                <div fxFlex="20%"  fxLayoutAlign="center right">
+                    <button class="deletebtn" mat-icon-button (click)="clearLogs()"><mat-icon>delete</mat-icon></button>
+                </div>
+            </div>
+                <div  fxLayout="column-wrap" fxLayoutAlign="left center">
+                   <mat-card fxFlex="100%">
+                       <mat-card-content fxLayoutAlign="start">
+                        <ul >
+                                <li *ngFor="let i of logs">{{i}}</li>
+                        </ul>
+                        </mat-card-content>
+                    </mat-card>
+                        
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="outerContainer">
+    <div class="container" fxLayout="row" fxLayoutGap="10px" >
+        <div fxFlex="60%" class="calContainer">
+            <div class="dispCalculator" fxLayout="column" fxLayoutGap="10px">
+                <div fxFlex="100" fxLayoutAlign="center center">
+                    <mat-card fxFlex="100%" >{{displayInput}}{{result}}</mat-card>
+                </div>
+                <div fxFlex="100" fxLayoutAlign="center center"><p>{{error}}</p></div>
+            </div>
+            <div fxLayout="column">
+                <mat-grid-list fxFlex="nogrow" cols="4" rowHeight="50" ratio="4:4" [gutterSize]="'5px'">
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(1)">1</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(2)">2</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(3)">3</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getOperator('+')">+</button></mat-grid-tile>
+               
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(4)">4</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(5)">5</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(6)">6</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getOperator('-')">-</button></mat-grid-tile>
+               
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(7)">7</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(8)">8</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(9)">9</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getOperator('*')">*</button></mat-grid-tile>
+               
+                    <mat-grid-tile><button mat-raised-button (click)="reset()">Reset</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getNumArray(0)">0</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getResult()">=</button></mat-grid-tile>
+                    <mat-grid-tile><button mat-raised-button (click)="getOperator('/')">/</button></mat-grid-tile>
+                </mat-grid-list>
+          
+            </div>
+        </div>
+        <div fxFlex="40%" class="logContainer">
+            <div class="displogs" fxLayout="column-wrap">
+                <div fxFlex="80%" fxflex="nogrow" fxLayoutAlign="center center">Logs</div>
+                <div fxFlex="20%" fxflex="nogrow" fxLayoutAlign="center right">
+                    <button class="deletebtn" mat-icon-button (click)="clearLogs()"><mat-icon>delete</mat-icon></button>
+                </div>
+            </div>
+                <div flflex="100%" fxLayoutAlign="left center">
+                    <ul >
+                        <li *ngFor="let i of logs">{{i}}</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="outerContainer">
+    <div fxLayout="row" fxLayoutGap="5px" class="container">
+        <div fxLayoutAlign="center center"><button mat-icon-button (click)="toggleNav()"><mat-icon>menu</mat-icon></button>
+        </div>
+        <div fxFlex="4 1 auto" fxLayoutAlign="center center"><span>{{title}}</span></div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div>
+    <mat-card>{{displayInput}}{{result}}</mat-card>
+    <p>{{error}}</p>
+</div>
+<mat-grid-list cols="2"> 
+<mat-grid-tile>
+        <div class="main">
+            <div calss="calculator">
+        <mat-grid-list cols="4" rowHeight="50" [gutterSize]="'5px'">
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(1)">1</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(2)">2</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(3)">3</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getOperator('+')">+</button></mat-grid-tile>
+       
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(4)">4</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(5)">5</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(6)">6</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getOperator('-')">-</button></mat-grid-tile>
+       
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(7)">7</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(8)">8</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(9)">9</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getOperator('*')">*</button></mat-grid-tile>
+       
+            <mat-grid-tile><button mat-raised-button (click)="reset()">Reset</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getNumArray(0)">0</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getResult()">=</button></mat-grid-tile>
+            <mat-grid-tile><button mat-raised-button (click)="getOperator('/')">/</button></mat-grid-tile>
+        </mat-grid-list>
+        </div>
+    </div>
+   
+ 
+   <button mat-raised-button (click)="deleteLastInput()">C</button> -->
+<!-- </mat-grid-tile>
+<mat-grid-tile>
+    <ul >
+        <li *ngFor="let i of logs">{{i}}</li>
+    </ul>
+    <mat-grid-tile>
+    <div class="logs">
+        <button class="deletebtn"mat-icon-button (click)="clearLogs()"><mat-icon>delete</mat-icon></button>
+    </div>
+</mat-grid-tile>
+    
+</mat-grid-tile>
+</mat-grid-list>     --> 
